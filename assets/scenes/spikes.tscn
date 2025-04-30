@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dv44lvdyboy6j"]
+
+[ext_resource type="Script" uid="uid://djvn4cffqr75e" path="res://assets/scripts/preda.gd" id="1_hccmy"]
+[ext_resource type="Texture2D" uid="uid://cqh81i83eqo3n" path="res://assets/sprites/rocks1_6.png" id="1_ovak2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hccmy"]
+size = Vector2(51.2, 25.6)
+
+[node name="pedra" type="Area2D"]
+script = ExtResource("1_hccmy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-9.53674e-07, 9.53674e-07)
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("1_ovak2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.38419e-06, 7.7486e-07)
+scale = Vector2(0.625, 0.625)
+shape = SubResource("RectangleShape2D_hccmy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
